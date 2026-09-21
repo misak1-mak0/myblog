@@ -1,0 +1,87 @@
+baseURL = 'https://example.org/'
+locale = 'zh-cn'
+title = 'Misak1のRhythm'
+theme = "PaperMod"
+defaultContentLanguage = "zh"
+
+# 分页：每页文章数
+[pagination]
+  pagerSize = 10
+
+# 让首页同时输出 HTML、RSS 和 JSON（JSON 用于搜索）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# ============================================================
+# PaperMod 主题参数
+# ============================================================
+[params]
+  env = "production"
+  description = "Something about Galgame"
+  author = "Misak1"
+  defaultTheme = "auto"                  # auto / light / dark
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowFullText = false
+  ShowWordCount = true
+  ShowToc = true                         # 文章目录
+  TocOpen = false
+  disableScrollToTop = false
+  disableAnchoredHeadings = false
+  hideFooter = false
+  hideSummary = false
+  ShowCanonicalLink = false
+  ShowSearch = true                      # 需要 [outputs] 里的 JSON
+
+  # 首页信息
+  [params.homeInfoParams]
+    Title = "十二Miki（持续更新中）"
+    Content = "遥かに仰ぎ、麗しの、信天翁航海録、車輪の国、向日葵の少女"
+
+  # 社交图标（按需增减）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/misak1-mak0"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+# ============================================================
+# 菜单
+# ============================================================
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 30
+
+# ============================================================
+# Markdown 渲染
+# ============================================================
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true                      # 允许在 Markdown 中写 HTML
+  [markup.highlight]
+    noClasses = false
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+
+# ============================================================
+# 其他
+# ============================================================
+enableRobotsTXT = true
