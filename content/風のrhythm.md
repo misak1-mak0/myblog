@@ -2,7 +2,7 @@
 date = '2026-09-21T19:17:27+08:00'
 draft = true
 title = '風のrhythm'
-tags:["BGM"]
+tags = 'BGM'
 +++
 作词 : ドン．マッコウ
 作曲 : 石井裕树
