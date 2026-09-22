@@ -3,7 +3,13 @@ date = '2026-09-21T19:17:27+08:00'
 draft = false
 title = '風のrhythm'
 tags = ['BGM']
+[cover]
+image = "cover.png"
+alt = "sumika"
+caption = ""
+hiddenInSingle = true
 +++
+
 **——作词 : ドン．マッコウ**
 
 **——作曲 : 石井裕树**
@@ -45,3 +51,5 @@ tags = ['BGM']
 きらめいていく新緑の葉影  
 木漏れ日を抱きしめて二人  
 今　生まれ変わるBrand-New-Day  
+
+![sumika](cover.png)

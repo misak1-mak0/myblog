@@ -41,15 +41,18 @@ hasCJKLanguage = true
   # 首页信息
   [params.homeInfoParams]
     Title = "十二Miki（持续更新中）"
-    Content = "遥かに仰ぎ、麗しの、信天翁航海録、車輪の国、向日葵の少女"
+    Content = "遥かに仰ぎ、麗しの｜信天翁航海録｜車輪の国、向日葵の少女"
 
   # 社交图标（按需增减）
   [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/misak1-mak0"
-  [[params.socialIcons]]
     name = "rss"
     url = "/index.xml"
+  [[params.socialIcons]]
+    name = "bangumi"
+    url = "https://bgm.tv/user/misak1"
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://x.com/MISAKNINA"
 
 # ============================================================
 # 菜单
