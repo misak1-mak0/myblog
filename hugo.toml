@@ -3,6 +3,7 @@ locale = 'zh-cn'
 title = 'Misak1のRhythm'
 theme = "PaperMod"
 defaultContentLanguage = "zh"
+hasCJKLanguage = true
 
 # 分页：每页文章数
 [pagination]
