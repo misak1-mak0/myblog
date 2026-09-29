@@ -1,0 +1,38 @@
+{{ $images := .Page.Resources.Match (.Get "match" | default "*") }}
+{{ $galleryID := printf "gallery-%s" (substr (md5 .Position) 0 8) }}
+
+<div class="image-gallery-container" id="{{ $galleryID }}">
+  <div class="main-image">
+    {{ range $index, $img := $images }}
+      {{ if eq $index 0 }}
+        {{ $resized := $img.Resize "900x webp q85" }}
+        <img src="{{ $resized.RelPermalink }}" alt="{{ $img.Name }}" class="gallery-main-img">
+      {{ end }}
+    {{ end }}
+  </div>
+  <div class="thumbnail-strip">
+    {{ range $index, $img := $images }}
+      {{ $thumb := $img.Resize "200x webp q80" }}
+      <img src="{{ $thumb.RelPermalink }}"
+           data-full="{{ ($img.Resize "900x webp q85").RelPermalink }}"
+           alt="{{ $img.Name }}"
+           class="thumb {{ if eq $index 0 }}active{{ end }}">
+    {{ end }}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('{{ $galleryID }}');
+  if (!container) return;
+  const mainImg = container.querySelector('.gallery-main-img');
+  const thumbs = container.querySelectorAll('.thumb');
+  thumbs.forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      mainImg.src = this.dataset.full;
+      thumbs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
+</script>

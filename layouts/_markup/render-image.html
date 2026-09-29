@@ -6,7 +6,7 @@
     {{- $resource := . -}}
     {{- $subType := $resource.MediaType.SubType -}}
     {{- if and (ne $subType "gif") (ne $subType "svg") -}}
-      {{- $resource = $resource.Resize "500x webp q100" -}}
+      {{- $resource = $resource.Resize "800x" -}}
     {{- end -}}
     {{- $src = $resource.RelPermalink -}}
     {{- with $u.RawQuery -}}
