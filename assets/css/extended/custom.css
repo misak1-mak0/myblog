@@ -61,3 +61,37 @@
   border-color: var(--primary);
   opacity: 1;
 }
+/* ============================================================
+   首页文章两列布局
+   ============================================================ */
+.main.home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    max-width: calc(var(--main-width) + var(--gap) * 8);
+}
+
+/* 首页顶部个人信息卡（first-entry），跨满两列 */
+.main.home .first-entry {
+    grid-column: 1 / -1;
+}
+
+/* 分页导航，跨满两列 */
+.main.home .page-footer {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
+
+/* 每篇文章卡片（post-entry）占一列 */
+.main.home .post-entry {
+    margin: 0;
+}
+
+/* 窄屏自动变单列 */
+@media screen and (max-width: 768px) {
+    .main.home {
+        grid-template-columns: 1fr;
+        max-width: var(--main-width);
+    }
+}
