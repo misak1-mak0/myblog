@@ -1,2 +1,21 @@
-{{ $src := (.Get "src") }}
-<video src="{{ $src }}" controls muted></video>
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+{{ $autoplay := .Get "autoplay" | default false }}
+{{ $muted := .Get "muted" | default false }}
+{{ $loop := .Get "loop" | default false }}
+{{ $controls := .Get "controls" | default true }}
+
+<figure class="video-figure">
+    <video src="{{ $src }}"
+           {{ if $controls }}controls{{ end }}
+           {{ if $autoplay }}autoplay{{ end }}
+           {{ if $muted }}muted{{ end }}
+           {{ if $loop }}loop{{ end }}
+           playsinline
+           preload="metadata">
+        <p>你的浏览器不支持 HTML5 视频。<a href="{{ $src }}">点击下载</a>。</p>
+    </video>
+    {{ with $caption }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+    {{ end }}
+</figure>
