@@ -43,6 +43,11 @@ hasCJKLanguage = true
     Title = "十二Miki（持续更新中）"
     Content = "遥かに仰ぎ、麗しの｜信天翁航海録｜車輪の国、向日葵の少女"
 
+  # 广告
+  [params.ads]
+    leftImage = 'ads/left.png'
+    leftLink = 'https://a.sofmap.com/calendar_list.aspx?product_type=NEW&search_type=&date_undecided=&date_from=2026%2F10%2F30&date_to=&keyword=FORTUNE%81%7EWORLD%81%60%96l%82%E7%82%AA%83Q%81%5B%83%80%82%F0%8D%EC%82%E9%97%9D%97R%81%60&keyword_not=&gid=002110&image=list&promo=on'
+
   # 社交图标（按需增减）
   [[params.socialIcons]]
     name = "rss"
@@ -61,12 +66,6 @@ hasCJKLanguage = true
     favicon32x32 = '/favicon-32x32.png'
     apple_touch_icon = '/apple-touch-icon.png'
 
-  # 广告
-  [params.ads]
-    leftImage = '/ads/left.png'
-    leftLink = 'https://example.com/left'
-    rightImage = '/ads/right.png'
-    rightLink = 'https://example.com/right'
 
 # ============================================================
 # 菜单

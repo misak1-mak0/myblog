@@ -101,17 +101,17 @@
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  width: 120px;
   z-index: 9999;
   display: none;
 }
-.ad-float-left { left: 0; }
+.ad-float-left { left: 80px; }
 .ad-float-right { right: 0; }
 
+/* 图片按原始尺寸显示，不强制拉伸 */
 .ad-float img {
-  width: 100%;
-  height: auto;
   display: block;
+  max-width: 50%;
+  height: auto;
   border-radius: 0 8px 8px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
@@ -119,10 +119,12 @@
   border-radius: 8px 0 0 8px;
 }
 
+/* 关闭按钮：贴图片右上角 *//*
 .ad-close {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
   width: 22px;
   height: 22px;
   border: none;
@@ -133,10 +135,13 @@
   line-height: 1;
   cursor: pointer;
   z-index: 1;
+  padding: 0;
 }
-.ad-close:hover { background: #000; }
-
-/* 只有屏幕够宽才显示，避免遮挡正文 */
+.ad-close:hover {
+  background: #000;
+}
+*/
+/* 屏幕够宽才显示，阈值 = 内容宽 + 图片宽 * 2 + 边距 */
 @media (min-width: 1500px) {
   .ad-float { display: block; }
 }
