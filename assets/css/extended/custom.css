@@ -95,3 +95,48 @@
         max-width: var(--main-width);
     }
 }
+
+/*广告竖排图片*/
+.ad-float {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  z-index: 9999;
+  display: none;
+}
+.ad-float-left { left: 0; }
+.ad-float-right { right: 0; }
+
+.ad-float img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.ad-float-right img {
+  border-radius: 8px 0 0 8px;
+}
+
+.ad-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,.7);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+.ad-close:hover { background: #000; }
+
+/* 只有屏幕够宽才显示，避免遮挡正文 */
+@media (min-width: 1500px) {
+  .ad-float { display: block; }
+}

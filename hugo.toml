@@ -61,6 +61,13 @@ hasCJKLanguage = true
     favicon32x32 = '/favicon-32x32.png'
     apple_touch_icon = '/apple-touch-icon.png'
 
+  # 广告
+  [params.ads]
+    leftImage = '/ads/left.png'
+    leftLink = 'https://example.com/left'
+    rightImage = '/ads/right.png'
+    rightLink = 'https://example.com/right'
+
 # ============================================================
 # 菜单
 # ============================================================

@@ -1,0 +1,38 @@
+{{ with site.Params.ads }}
+  {{ with .leftImage }}
+  <aside class="ad-float ad-float-left" id="ad-left" data-ad-id="ad-left">
+    <button class="ad-close" aria-label="关闭广告">×</button>
+    <a href="{{ $.Site.Params.ads.leftLink | default '#' }}" target="_blank" rel="noopener noreferrer sponsored">
+      <img src="{{ . }}" alt="广告">
+    </a>
+  </aside>
+  {{ end }}
+
+  {{ with .rightImage }}
+  <aside class="ad-float ad-float-right" id="ad-right" data-ad-id="ad-right">
+    <button class="ad-close" aria-label="关闭广告">×</button>
+    <a href="{{ $.Site.Params.ads.rightLink | default '#' }}" target="_blank" rel="noopener noreferrer sponsored">
+      <img src="{{ . }}" alt="广告">
+    </a>
+  </aside>
+  {{ end }}
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ad-float').forEach(function (ad) {
+      var id = ad.dataset.adId;
+      if (localStorage.getItem('ad-closed-' + id) === '1') {
+        ad.style.display = 'none';
+        return;
+      }
+      var btn = ad.querySelector('.ad-close');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          ad.style.display = 'none';
+          localStorage.setItem('ad-closed-' + id, '1');
+        });
+      }
+    });
+  });
+  </script>
+{{ end }}
